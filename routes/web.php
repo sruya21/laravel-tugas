@@ -14,5 +14,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('welcome'); });
+Route::get('/', 'AboutController@numpang')->name('welcome');
+    
+/* About */
+Route::get('about', function () {
+	return view('etc/about'); });
+Route::get('about', 'AboutController@index')->name('etc.about');
