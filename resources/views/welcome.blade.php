@@ -1,4 +1,4 @@
-@extends('layout.master')
-@section('content')
-ini index
-@endsection
+    @extends('layout.master')
+    @section('content')
+    <center>CONTENT IS BEING DEVELOPED</center>
+    @endsection
