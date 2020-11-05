@@ -22,7 +22,6 @@
     <body>
       @include('layout.nav')
       @yield('content')
-      @yield('about')
       @include('layout.footer')
       
       

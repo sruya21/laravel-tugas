@@ -1,4 +1,4 @@
 @extends('layout.master')
 @section('content')
 ini about
-@stop
+@endsection

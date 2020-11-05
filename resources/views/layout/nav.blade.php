@@ -10,8 +10,8 @@
     <ul>
     <li class="active"><a href="{{url('/')}}">Home</a></li>
     <li><a href="{{route('etc.about')}}">About</a></li>
-    <li><a href="#">Resume</a></li>
-    <li><a href="#">Services</a></li>
+    <li><a href="{{route('etc.data')}}">Data</a></li>
+    <li><a href="{{route('etc.form')}}">form</a></li>
     <li><a href="#">Portfolio</a></li>
     <li><a href="#">Contact</a></li>
     </ul>
