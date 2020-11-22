@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\form;
 
 class FormController extends Controller
@@ -24,7 +25,7 @@ class FormController extends Controller
      */
     public function create()
     {
-        return view('etc.from');
+        return view('etc.form');
     }
 
     /**

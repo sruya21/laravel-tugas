@@ -14,22 +14,22 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome'); });
-Route::get('/', 'AboutController@numpang')->name('welcome');
+    return view('welcome');
+});
+
     
 /* About */
 Route::get('about', function () {
-	return view('etc/about'); });
-Route::get('about', 'AboutController@index')->name('etc.about');
-
-/* Data */
-Route::get('data', function () {
-    return view('etc.data'); });
-Route::get('data', 'AboutController@data')->name('etc.data');
+    return view('etc.about');
+});
 
 /* Form */
 Route::get('form', function () {
-    return view('etc.form'); });
-Route::get('form', 'AboutController@form')->name('etc.form');
-Route::post('form', 'FormController@store');
+    return view('etc.form');
+});
 
+Route::post('form', 'FormController@store');
+Route::get('data', 'DataController@index');
+Route::get('data/edit{id}', 'DataController@edit');
+Route::post('data/edit', 'DataController@update');
+Route::get('data/hapus{id}', 'DataController@hapus');

@@ -9,9 +9,9 @@
     <nav class="nav-menu d-none d-lg-block">
     <ul>
     <li class="active"><a href="{{url('/')}}">Home</a></li>
-    <li><a href="{{route('etc.about')}}">About</a></li>
-    <li><a href="{{route('etc.data')}}">Data</a></li>
-    <li><a href="{{route('etc.form')}}">form</a></li>
+    <li><a href="{{url('about')}}">About</a></li>
+    <li><a href="{{url('data')}}">Data</a></li>
+    <li><a href="{{url('form')}}">form</a></li>
     <li><a href="#">Portfolio</a></li>
     <li><a href="#">Contact</a></li>
     </ul>

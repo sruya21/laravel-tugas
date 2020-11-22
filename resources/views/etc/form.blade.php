@@ -14,6 +14,11 @@
     <label for="alamat">Alamat</label>
     <input name="alamat" type="text" class="form-control" placeholder="Masukan alamat">
   </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" class="btn btn-primary" onclick="berhasil()">Submit</button>
 </form>
+<script>
+  function berhasil(){
+    alert("Data Berhasil Ditambahkan");
+  }
+</script>
 @stop
