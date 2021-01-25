@@ -1,11 +1,12 @@
-    @extends('layout.master')
-    @section('content')
-     <!-- ======= Hero Section ======= -->
-  <section class="d-flex align-items-center">
-    <div class="container d-flex flex-column align-items-center" data-aos="zoom-in" data-aos-delay="100">
-      <h1>Surya Candra Dwi Ananta</h1>
-      <h2>I'm a script kiddies from Indonesia</h2>
-      <a href="/about" class="btn-about">About Me</a>
+@extends('layout.master')
+@section('content')
+<div class="swiper-container jumbotron mt-2">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide animated fadeOutUp">SMKN1</div>
+            <div class="animate_animated animate__fadeOutUp swiper-slide">Pasti</div>
+            <div class="swiper-slide">Bisa</div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="#"></div>
     </div>
-  </section><!-- End Hero -->
-    @endsection
+@endsection

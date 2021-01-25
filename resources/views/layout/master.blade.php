@@ -1,22 +1,18 @@
 <!DOCTYPE html>
-    <html lang="en">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      
-     <!-- Google Fonts -->
-     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-     
-     <!-- Vendor CSS Files -->
+     <!-- CSS Files -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
      <link href="{{asset('/css/bootstrap.min.css')}}" rel="stylesheet">
-     <link href="{{asset('/vendor/icofont/icofont.min.css')}}" rel="stylesheet">
-     <link href="{{asset('/vendor/owl.carousel/assets/owl.carousel.min.css')}}" rel="stylesheet">
-     <link href="{{asset('/vendor/boxicons/css/boxicons.min.css')}}" rel="stylesheet">
-     <link href="{{asset('/vendor/venobox/venobox.css')}}" rel="stylesheet">
-     <link href="{{asset('/vendor/aos/aos.css')}}" rel="stylesheet">
+     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
+     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+     
      
      <!-- Custom CSS File -->
-       <link href="{{asset('/css/style.css')}}" rel="stylesheet">
+      <link href="{{asset('/css/style.css')}}" rel="stylesheet">
        </head>
     
     <body>
@@ -25,21 +21,32 @@
       @include('layout.footer')
       
       
-       <!-- Vendor JS Files -->
-       <script type="text/javascript" src="{{asset('/vendor/jquery/jquery.min.js')}}"></script>
-       <script type="text/javascript" src="{{asset('/js/bootstrap.bundle.min.js')}}"></script>
-       <script type="text/javascript" src="{{asset('/vendor/jquery.easing/jquery.easing.min.js')}}"></script>
-       <script type="text/javascript" src="{{asset('/vendor/php-email-form/validate.js')}}"></script>
-       <script type="text/javascript" src="{{asset('/vendor/waypoints/jquery.waypoints.min.js')}}"></script>
-       <script type="text/javascript" src="{{asset('/vendor/counterup/counterup.min.js')}}"></script>
-       <script type="text/javascript" src="{{asset('/vendor/owl.carousel/owl.carousel.min.js')}}"></script>
-       <script type="text/javascript" src="{{asset('/vendor/isotope-layout/isotope.pkgd.min.js')}}"></script>
-       <script type="text/javascript" src="{{asset('/vendor/venobox/venobox.min.js')}}"></script>
-       <script type="text/javascript" src="{{asset('/vendor/aos/aos.js')}}"></script>
+       <!-- JS Files -->
+       <script type="text/javascript" src="{{asset('js/jquery.min.js')}}"></script>
+       <script type="text/javascript" src="{{asset('js/bootstrap.bundle.min.js')}}"></script>
+       <script type="text/javascript" src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+       <script type="text/javascript" src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
      
-       <!-- Custom Main JS File -->
-       <script type="text/javascript" src="{{asset('/js/main.js')}}"></script>
-     
-  
+       <!-- Custom JS-->
+       <script>
+          var swiper = new Swiper('.swiper-container', {
+            direction: 'vertical',
+            slidesPerView: 1,
+            spaceBetween: 30,
+            mousewheel: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,},});
+</script>
+      <script>
+        $(document).ready(function() {
+        $('li.active').removeClass('active');
+        $('a[href="' + location.pathname + '"]').closest('li').addClass('active'); });
+      </script>
+      <script>
+        $(document).ready(function() {
+        $('a.bg-primary').removeClass('bg-primary');
+        $('a[href="' + location.pathname + '"]').closest('a').addClass('bg-primary'); });
+      </script>
     </body>
-    </html>
+</html>
