@@ -5,6 +5,18 @@
             <div class="jumbotron">
                 <center>
                 <a class="btn btn-primary mb-5" href="/form">Tambah Data Siswa</a>
+                @if(session()->has('sukses'))
+                    <div class="alert alert-success">
+                    {{ session()->get('sukses') }}
+                    </div>
+                @endif
+
+                @if(session()->has('sukses1'))
+                    <div class="alert alert-success">
+                    {{ session()->get('sukses1') }}
+                    </div>
+                @endif
+
                 <table class="table table-hover" border="1">
                     <tr class="table-dark">
                         <th scope="col">Nama</th>
@@ -18,7 +30,7 @@
                         <td>{{$s->telepon}}</td>
                         <td>{{$s->alamat}}</td>
                         <td><a href="/data/edit{{$s->id}}">Edit</a>
-                        <td><a href="/data/hapus{{$s->id}}" onclick="a()">Hapus</a>
+                        <td><a href="/data/hapus{{$s->id}}">Hapus</a>
                     </tr>
                     @endforeach
                 </table>
@@ -26,9 +38,4 @@
             </div>
         </div>
     </div>
-    <script>
-    function a(){
-    alert('berhasil dihapus')
-    }
-    </script>
 @endsection

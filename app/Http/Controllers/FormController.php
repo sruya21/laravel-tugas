@@ -36,8 +36,17 @@ class FormController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request,[
+            'nama' => 'required|max:50',
+            'telepon' => 'required|numeric',
+            'alamat' => 'required|max:50',
+        ], [
+            'nama.required' => 'Nama tidak boleh kosong',
+            'telepon.required' => 'Telepon tidak boleh kosong',
+            'alamat.required' => 'Alamat tidak boleh kosong',
+        ]);
         form::create($request->all());
-        return redirect()->back();
+        return redirect()->back()->with('message', 'Berhasil menambahkan data');
     }
 
     /**

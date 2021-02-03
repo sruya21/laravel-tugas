@@ -16,12 +16,22 @@ class DataController extends Controller
 
     public function update(Request $request)
     {
+        $this->validate($request,[
+            'nama' => 'required|max:50',
+            'telepon' => 'required|numeric',
+            'alamat' => 'required|max:50',
+        ], [
+            'nama.required' => 'Nama tidak boleh kosong',
+            'telepon.required' => 'Telepon tidak boleh kosong',
+            'alamat.required' => 'Alamat tidak boleh kosong',
+        ]);
         DB::table('siswa')->where('id',$request->id)->update([
             'nama' => $request->nama,
             'telepon' => $request->telepon,
             'alamat' => $request->alamat,
         ]);
-        return redirect('data');
+
+        return redirect('data')->with('sukses1', 'Sukses diperbarui');
     }
 
     public function edit($id)
@@ -33,7 +43,7 @@ class DataController extends Controller
     public function hapus($id)
     {
        $siswa = DB::table('siswa')->where('id',$id)->delete();
-       return redirect('data');
+       return redirect()->back()->with('sukses', 'Data telah dihapus');
     }
 
 }

@@ -7,6 +7,16 @@
         <div class="row justify-content-center">
         <h2 class="text-white bg-primary pl-1 pr-1">Edit Siswa</h2>
       </div>
+
+      @if(count($errors) > 0)
+          <div class="alert alert-danger">
+            <ul><strong>Gagal</strong>
+              @foreach($errors->all() as $error)
+                <li>{{$error}}</li>
+              @endforeach
+            </ul>
+          </div>
+          @endif
         @foreach($siswa as $s)
         <form action="/data/edit" method="post">
             @csrf
@@ -25,7 +35,7 @@
                 <label for="alamat">Alamat</label>
                 <input name="alamat" type="text" class="form-control" value="{{ $s->alamat }}">
             </div>
-            <input type="submit" class="btn btn-primary" value="simpan" onclick="berhasil()">
+            <input type="submit" class="btn btn-primary" value="simpan">
             <a class="btn btn-primary" href="/data">batal</a>
         </form>
         </div>
